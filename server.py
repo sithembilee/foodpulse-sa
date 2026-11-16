@@ -13,6 +13,13 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent
 AZLABS_COMPARE_URL = "https://azlabs.ai/api/v1/grocery/compare"
+PUBLIC_ASSETS = {
+    "/": "index.html",
+    "/index.html": "index.html",
+    "/styles.css": "styles.css",
+    "/app.js": "app.js",
+    "/live-prices.js": "live-prices.js",
+}
 
 
 def validate_compare_params(query_values: list[str], limit_values: list[str]) -> tuple[str, int]:
@@ -110,7 +117,7 @@ class FoodPulseHandler(BaseHTTPRequestHandler):
             return
 
         # Serve only the three public site assets; never expose Python source or dotfiles.
-        asset = {"/": "index.html", "/index.html": "index.html", "/styles.css": "styles.css", "/app.js": "app.js"}.get(parsed.path)
+        asset = PUBLIC_ASSETS.get(parsed.path)
         if asset is None:
             self.send_error(404)
             return

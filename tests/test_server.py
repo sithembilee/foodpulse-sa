@@ -1,7 +1,7 @@
 import unittest
 from urllib.parse import parse_qs, urlsplit
 
-from server import fetch_comparison, make_compare_request, validate_compare_params
+from server import PUBLIC_ASSETS, fetch_comparison, make_compare_request, validate_compare_params
 
 
 class FakeResponse:
@@ -19,6 +19,10 @@ class FakeResponse:
 
 
 class GroceryApiTests(unittest.TestCase):
+    def test_public_assets_include_live_search_script_but_not_server_source(self):
+        self.assertEqual(PUBLIC_ASSETS.get("/live-prices.js"), "live-prices.js")
+        self.assertIsNone(PUBLIC_ASSETS.get("/server.py"))
+
     def test_validates_and_defaults_result_limit(self):
         self.assertEqual(validate_compare_params(["  oats  "], []), ("oats", 5))
         self.assertEqual(validate_compare_params(["milk"], ["10"]), ("milk", 10))
