@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f4">
+  <meta name="description" content="FoodPulse helps South African households compare grocery prices and plan a smarter shop.">
+  <title>FoodPulse — Make every rand count</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="FoodPulse home"><span class="brand-mark">f<span>+</span></span><span>foodpulse<span class="brand-sa">SA</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Overview</a><a class="nav-link" href="#prices">Price watch</a><a class="nav-link" href="#basket">My basket</a>
+    </nav>
+    <div class="header-right"><span class="region"><span class="pin">⌖</span> Cape Town, WC <span class="chevron">⌄</span></span><button class="avatar" aria-label="Your profile">S</button></div>
+    <button class="mobile-menu" aria-label="Open navigation">☰</button>
+  </header>
+
+  <main id="home">
+    <div class="preview-banner wrap"><span>✳</span><b>PREVIEW MODE</b> Figures, trends and product prices are illustrative demo content, not live verified data.</div>
+    <section class="hero wrap">
+      <div class="hero-copy"><div class="eyebrow"><span class="pulse-dot"></span> YOUR WEEKLY FOOD PULSE</div><h1>Make every rand<br>count at the <em>checkout.</em></h1><p>Good choices start with good information. See what’s moving, find better value and shop with confidence.</p><div class="hero-actions"><a class="button button-dark" href="#prices">Explore prices <span>↗</span></a><a class="text-link" href="#basket">Plan my basket <span>→</span></a></div></div>
+      <div class="hero-art" aria-label="Illustration of fresh groceries"><div class="art-sun"></div><div class="art-note"><span class="note-icon">↘</span><span><b>Small swaps add up</b><small>Build a smarter basket</small></span></div><div class="fruit fruit-orange"></div><div class="fruit fruit-tomato"></div><div class="fruit fruit-pear"></div><div class="fruit fruit-lemon"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="art-label">FRESH FINDS <span>✳</span></div></div>
+    </section>
+
+    <section class="wrap insight-section" aria-labelledby="pulse-title">
+      <div class="section-heading"><div><div class="eyebrow muted">THE BIG PICTURE <span class="tiny-spark">✳</span></div><h2 id="pulse-title">Your food pulse</h2></div><span class="period">This week <span class="chevron">⌄</span></span></div>
+      <div class="stat-grid">
+        <article class="stat-card"><div class="stat-top"><span class="stat-icon green">↘</span><span class="trend good">− 1.8%</span></div><div class="stat-label">FOOD BASKET INDEX</div><div class="stat-value">R1,248<span class="stat-unit">.60</span></div><div class="stat-foot">vs. last week <span class="foot-light">· sample basket</span></div><div class="sparkline green-line"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        <article class="stat-card"><div class="stat-top"><span class="stat-icon peach">✳</span><span class="trend good">3 worth a look</span></div><div class="stat-label">PRICE DROPS</div><div class="stat-value">12 <span class="stat-unit">items</span></div><div class="stat-foot">Tracked in your area <span class="foot-light">· demo data</span></div><div class="drop-pills"><span>Tomatoes <b>−8%</b></span><span>Eggs <b>−5%</b></span><span>Rice <b>−3%</b></span></div></article>
+        <article class="stat-card budget-card"><div class="stat-top"><span class="stat-icon lilac">◎</span><span class="trend neutral">Monthly</span></div><div class="stat-label">YOUR FOOD BUDGET</div><div class="stat-value">R3,200</div><div class="budget-track"><span></span></div><div class="budget-foot"><span>R1,860 spent</span><b>58%</b></div><div class="stat-foot">R1,340 left this month</div></article>
+      </div>
+    </section>
+
+    <section class="wrap market-section" id="prices" aria-labelledby="market-title">
+      <div class="section-heading market-heading"><div><div class="eyebrow muted">A CLOSER LOOK <span class="tiny-spark">✳</span></div><h2 id="market-title">In your market</h2><p class="section-sub">A few everyday essentials worth keeping an eye on.</p></div><a class="text-link all-link" href="#all-products">View all products <span>→</span></a></div>
+      <div class="toolbar"><label class="search-box"><span>⌕</span><input id="product-search" type="search" placeholder="Search products..." aria-label="Search products"></label><div class="filter-group" role="group" aria-label="Filter products"><button class="filter active" data-filter="all">All items <span id="item-count">06</span></button><button class="filter" data-filter="Produce">Produce</button><button class="filter" data-filter="Dairy">Dairy</button><button class="filter" data-filter="Pantry">Pantry</button></div><button class="sort-button" id="sort-button">Sort: Popular <span>⌄</span></button></div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="demo-disclaimer"><span>ⓘ</span> <span><b>Preview data:</b> Prices and retailer labels on this page are illustrative demo content, not verified live South African retail prices.</span></div>
+    </section>
+
+    <section class="wrap basket-section" id="basket">
+      <div class="basket-card"><div class="basket-left"><div class="eyebrow">MAKE A PLAN <span class="tiny-spark">✳</span></div><h2>A little planning<br>goes a long way.</h2><p>Add products to your basket to see your running total and compare your plan with your monthly budget.</p><a class="button button-light" href="#prices">Build your basket <span>→</span></a></div><div class="basket-right"><div class="basket-top"><span>YOUR SHOPPING BASKET</span><span class="basket-count" id="basket-count">0 ITEMS</span></div><div id="basket-items" class="basket-items"><div class="basket-empty"><span>＋</span><p>Your basket is ready when you are.</p><small>Add an item from the price watch above.</small></div></div><div class="basket-total"><span>Estimated total</span><b id="basket-total">R0.00</b></div><div class="basket-budget"><span>Monthly budget progress</span><span>R1,340 remaining</span></div></div></div>
+    </section>
+  </main>
+  <footer class="footer wrap"><a class="brand footer-brand" href="#home"><span class="brand-mark">f<span>+</span></span><span>foodpulse<span class="brand-sa">SA</span></span></a><span>Better food choices start with better information.</span><span>Built for South African households <b>♥</b></span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
