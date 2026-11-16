@@ -23,7 +23,7 @@
   </header>
 
   <main id="home">
-    <div class="preview-banner wrap"><span>✳</span><b>PREVIEW MODE</b> Figures, trends and product prices are illustrative demo content, not live verified data.</div>
+    <div class="preview-banner wrap"><span>✳</span><b>PREVIEW MODE</b> Overview cards are demo content. Use live search below to query retailer catalogue prices.</div>
     <section class="hero wrap">
       <div class="hero-copy"><div class="eyebrow"><span class="pulse-dot"></span> YOUR WEEKLY FOOD PULSE</div><h1>Make every rand<br>count at the <em>checkout.</em></h1><p>Good choices start with good information. See what’s moving, find better value and shop with confidence.</p><div class="hero-actions"><a class="button button-dark" href="#prices">Explore prices <span>↗</span></a><a class="text-link" href="#basket">Plan my basket <span>→</span></a></div></div>
       <div class="hero-art" aria-label="Illustration of fresh groceries"><div class="art-sun"></div><div class="art-note"><span class="note-icon">↘</span><span><b>Small swaps add up</b><small>Build a smarter basket</small></span></div><div class="fruit fruit-orange"></div><div class="fruit fruit-tomato"></div><div class="fruit fruit-pear"></div><div class="fruit fruit-lemon"></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="art-label">FRESH FINDS <span>✳</span></div></div>
@@ -41,8 +41,20 @@
     <section class="wrap market-section" id="prices" aria-labelledby="market-title">
       <div class="section-heading market-heading"><div><div class="eyebrow muted">A CLOSER LOOK <span class="tiny-spark">✳</span></div><h2 id="market-title">In your market</h2><p class="section-sub">A few everyday essentials worth keeping an eye on.</p></div><a class="text-link all-link" href="#all-products">View all products <span>→</span></a></div>
       <div class="toolbar"><label class="search-box"><span>⌕</span><input id="product-search" type="search" placeholder="Search products..." aria-label="Search products"></label><div class="filter-group" role="group" aria-label="Filter products"><button class="filter active" data-filter="all">All items <span id="item-count">06</span></button><button class="filter" data-filter="Produce">Produce</button><button class="filter" data-filter="Dairy">Dairy</button><button class="filter" data-filter="Pantry">Pantry</button></div><button class="sort-button" id="sort-button">Sort: Popular <span>⌄</span></button></div>
+      <section class="live-search-panel" aria-labelledby="live-search-title">
+        <form id="live-search-form">
+          <label id="live-search-title" for="live-query">Compare live retailer prices</label>
+          <div class="live-query-row">
+            <input id="live-query" name="q" type="search" maxlength="120" placeholder="Try Clover full cream milk 2L" required>
+            <button id="live-search-button" type="submit">Search live prices <span>↗</span></button>
+          </div>
+        </form>
+        <p class="live-data-note">Each search queries retailer catalogues through AZ Labs. Prices are for the store or region AZ Labs reports.</p>
+        <div id="live-status" class="live-status" role="status" aria-live="polite"></div>
+        <div id="live-results" class="live-results"></div>
+      </section>
       <div class="product-grid" id="product-grid"></div>
-      <div class="demo-disclaimer"><span>ⓘ</span> <span><b>Preview data:</b> Prices and retailer labels on this page are illustrative demo content, not verified live South African retail prices.</span></div>
+      <div class="demo-disclaimer"><span>ⓘ</span> <span><b>Preview data:</b> The overview catalogue is demo content; live search results above are fetched from retailer catalogues.</span></div>
     </section>
 
     <section class="wrap basket-section" id="basket">
@@ -51,5 +63,6 @@
   </main>
   <footer class="footer wrap"><a class="brand footer-brand" href="#home"><span class="brand-mark">f<span>+</span></span><span>foodpulse<span class="brand-sa">SA</span></span></a><span>Better food choices start with better information.</span><span>Built for South African households <b>♥</b></span></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="live-prices.js" defer></script>
 </body>
 </html>
